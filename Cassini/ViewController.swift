@@ -1,42 +1,31 @@
 //
 //  ViewController.swift
-//  Cassini
+//  
 //
 //  Created by saul on 02/07/15.
-//  Copyright (c) 2015 SaulGausin. All rights reserved.
+//
 //
 
 import UIKit
 
 class ViewController: UIViewController
 {
-    var imageURL: NSURL? {
-        didSet {
-            image = nil
-            fetchImage()
-        }
-    }
-    
-    private func fetchImage()
-    {
-        if let url = imageURL {
-            let imageData = NSData(contentsOfURL: url)
-            if imageData != nil {
-                image = UIImage(data: imageData!)
-            } else {
-                image = nil
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let ivc = segue.destinationViewController as? ImageViewController {
+            if let identifier = segue.identifier {
+                switch identifier {
+                case "Earth":
+                    ivc.imageURL = DemoURL.NASA.Earth
+                    ivc.title = "Earth"
+                case "Saturn":
+                    ivc.imageURL = DemoURL.NASA.Saturn
+                    ivc.title = "Saturn"
+                case "Cassini":
+                    ivc.imageURL = DemoURL.NASA.Cassini
+                    ivc.title = "Cassini"
+                default: break
+                }
             }
         }
     }
-    
-    private var imageView: UIImageView = UIImageView()
-    
-    private var image: UIImage? {
-        get { return imageView.image }
-        set {
-            imageView.image = newValue
-            imageView.sizeToFit()
-        }
-    }
 }
-
