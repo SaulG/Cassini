@@ -77,11 +77,8 @@
 		C72A0D9E1B45B64C00735763 /* Cassini */ = {
 			isa = PBXGroup;
 			children = (
-				C72A0DA11B45B64C00735763 /* AppDelegate.swift */,
 				C72A0DA31B45B64C00735763 /* ViewController.swift */,
 				C72A0DA51B45B64C00735763 /* Main.storyboard */,
-				C72A0DA81B45B64C00735763 /* Images.xcassets */,
-				C72A0DAA1B45B64C00735763 /* LaunchScreen.xib */,
 				C72A0D9F1B45B64C00735763 /* Supporting Files */,
 			);
 			path = Cassini;
@@ -90,6 +87,9 @@
 		C72A0D9F1B45B64C00735763 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C72A0DAA1B45B64C00735763 /* LaunchScreen.xib */,
+				C72A0DA81B45B64C00735763 /* Images.xcassets */,
+				C72A0DA11B45B64C00735763 /* AppDelegate.swift */,
 				C72A0DA01B45B64C00735763 /* Info.plist */,
 			);
 			name = "Supporting Files";
